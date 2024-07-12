@@ -1,6 +1,9 @@
 import { AntDesign, Octicons, SimpleLineIcons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
 import React from 'react';
+import { View } from 'react-native';
+
+import { SvgLogo } from '~/components/icons';
 
 const TabsLayout = () => {
   return (
@@ -8,8 +11,13 @@ const TabsLayout = () => {
       <Tabs.Screen
         name="home"
         options={{
-          title: 'Home',
-          tabBarShowLabel: true,
+          title: '',
+          //headerShown: false,
+          headerLeft: (props) => (
+            <View className="ml-4">
+              <SvgLogo />
+            </View>
+          ),
           tabBarIcon: ({ color, focused }) => <Octicons size={20} name="home" color={color} />,
           tabBarLabelStyle: {
             display: 'none',

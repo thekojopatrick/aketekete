@@ -1,4 +1,6 @@
+import Constant from 'expo-constants';
 import { Stack, useRouter } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { ImageBackground, StyleSheet, Text, View } from 'react-native';
 
@@ -18,11 +20,12 @@ const Welcome = () => {
   return (
     <>
       <Stack.Screen options={{ title: 'Welcome' }} />
+      <StatusBar style="light" />
       <View style={styles.container}>
         <ImageBackground source={assetImage} style={styles.image}>
           <Container>
-            <Text style={styles.welcomeText}>Welcome</Text>
             <View style={styles.logoContainer}>
+              <Text style={styles.welcomeText}>Welcome</Text>
               <Logo />
             </View>
             <Text style={styles.text}>Have your own unique and special piece</Text>
@@ -52,6 +55,8 @@ const styles = StyleSheet.create({
   logoContainer: {
     alignItems: 'center',
     flex: 1,
+    //marginTop: 40,
+    marginTop: 20 + Constant.statusBarHeight,
   },
   logo: {
     width: 200,
@@ -71,6 +76,7 @@ const styles = StyleSheet.create({
     fontSize: 42,
     fontWeight: 'bold',
     textAlign: 'left',
+    width: '80%',
   },
 });
 

@@ -1,4 +1,4 @@
-import { AntDesign, SimpleLineIcons } from '@expo/vector-icons';
+import { AntDesign, Octicons, SimpleLineIcons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
 import React from 'react';
 
@@ -10,7 +10,7 @@ const TabsLayout = () => {
         options={{
           title: 'Home',
           tabBarShowLabel: true,
-          tabBarIcon: ({ color }) => <AntDesign size={20} name="home" color={color} />,
+          tabBarIcon: ({ color, focused }) => <Octicons size={20} name="home" color={color} />,
           tabBarLabelStyle: {
             display: 'none',
           },

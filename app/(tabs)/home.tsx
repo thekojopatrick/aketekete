@@ -1,4 +1,5 @@
 import { Link, Stack } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
 import { Text, View, useColorScheme } from 'react-native';
 
 import { Button } from '~/components/Button';
@@ -17,6 +18,7 @@ export default function Home() {
           </Link>
         </Container>
       </View>
+      <StatusBar style="auto" />
     </>
   );
 }
